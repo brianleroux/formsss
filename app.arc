@@ -1,21 +1,10 @@
 @app
-learn-forms
-
-@static
-folder _site
+init
 
 @http
-post /logout              # clear session
-get /login                # create session
-get /admin                # list drafts
-get /drafts/:key          # edit draft 
-post /drafts              # create draft
-post /drafts/:key         # update draft
-post /drafts/:key/destroy # destroy draft
-post /drafts/:key/publish # publish draft!
+get /
 
-@tables
-data
-  scopeID *String
-  dataID **String
-  ttl TTL
+# @aws
+# profile default
+# region us-west-1
+  

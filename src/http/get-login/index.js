@@ -4,6 +4,7 @@ let github = require('./github')
 async function login(req) {
   if (req.query.code) {
     let account = await github(req)
+    console.log('login??????', account)
     return {
       session: {account},
       location: '/admin'

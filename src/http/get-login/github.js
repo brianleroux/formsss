@@ -22,6 +22,9 @@ module.exports = async function github(req) {
     headers: {Accept: 'application/json'},
   })
 
+
+  console.log('got user', user)
+
   // create a clean acccount obj
   return {
     token,

@@ -2,13 +2,36 @@
   "name": "begin-app",
   "version": "0.0.0",
   "description": "A Begin app with the minimum necessary file structure",
+  "arc": {
+    "app": "learn-forms",
+    "static": {
+      "folder": "_site"
+    },
+    "http": [
+      ["post", "/logout"],
+      ["get", "/login"],
+      ["get", "/admin"],
+      ["post", "/drafts/*"]
+    ],
+    "tables": {
+      "data": {
+        "scopeID": "*String",
+        "dataID": "**String",
+        "ttl": "TTL"
+      } 
+    }
+  },
   "scripts": {
     "build": "eleventy",
     "watch": "eleventy --serve",
-    "start": "ARC_STATIC_SPA=false npx sandbox"
+    "start": "sandbox"
   },
   "dependencies": {
-    "@architect/sandbox": "^3.1.3",
-    "@11ty/eleventy": "^0.11.0"
+    "@11ty/eleventy": "^0.11.0",
+    "@architect/functions": "^3.13.9",
+    "@architect/sandbox": "^3.3.6",
+    "@begin/data": "^2.0.0-RC.0",
+    "tiny-json-http": "^7.3.0",
+    "xss": "^1.0.8"
   }
 }
